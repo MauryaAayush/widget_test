@@ -1,31 +1,27 @@
+// import 'dart:convert';
+//
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/services.dart';
+//
+// import '../model/data_model.dart';
+//
+// class PostProvider with ChangeNotifier {
+//   PostResponse? _postResponse;
+//
+//   PostResponse? get postResponse => _postResponse;
+//
+//   Future<void> loadPostData() async {
+//     String jsonString = await rootBundle.loadString('assets/data.json');
+//     Map<String, dynamic> jsonMap = jsonDecode(jsonString);
+//     _postResponse = PostResponse.fromJson(jsonMap);
+//     notifyListeners();
+//   }
+// }
+
+
 import 'dart:convert';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
 
 
-class JsonProvider extends ChangeNotifier{
 
-    Map dataList = {};
-
-
-    JsonProvider(){
-      print('----------called--------------');
-      parsing();
-    }
-
-    Future<void> parsing()
-    async {
-      print('---------function called----------');
-
-      String? json = await rootBundle.loadString('key');
-      dataList = jsonDecode(json);
-
-    // objectList = dataList;
-
-
-    print("----------done-----------");
-    notifyListeners();
-    }
-
-
-}

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'Screens/Day1/View/Glass Morphism.dart';
-import 'Screens/Day2/provider/twiterProvider.dart';
 import 'Screens/Day2/view/Viewdata.dart';
+import 'Screens/TestScreen/Test Screen.dart';
 
 void main() {
   runApp(
       MultiProvider(providers: [
-        ChangeNotifierProvider(create: (context) => JsonProvider(),)
+        // ChangeNotifierProvider(create: (context) => PostProvider(),)
       ],
       child: const MyApp(),
       ));
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const ViewScreen(),
+      home:  UserPostsScreen(),
     );
   }
 }
